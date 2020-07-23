@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Página Principal</title>
+{% endblock %}
+
+{% block body %}
+		<br>
+		<h1>Instruções e Regras:</h1>
+		<br>
+		<br>
+		<br>
+		<main role="main">
+	<div class="jumbotron">
+		<div class="col-sm-8 mx-auto">
+			<h1>Bem vindo!</h1>
+			<p>Se algum objeto for perdido ele será registrado aqui em nosso sistema para você usuário ter uma experiencia melhor utilizando esse processo!</p>
+			<p>Ao entrar com sua conta de domínio @cesar.school, a lista completa dos itens aparecerá em sua tela, a partir daí você pode procurar seu objeto na lista e caso ache, ir para a recepção reivindicá-lo.</p>
+			<p>Você também pode utilizar a ferramenta de adicionar um objeto caso queira, e logo depois o entregue para a recepcionista do respectivo prédio onde o objeto foi encontrado.</p>
+			<p>Doações periódicas são feitas com os objetos perdidos! Após um mês, todos os objetos armazenados no achados e perdidos são doados.</p>
+			<center><h1>Vale lembrar que nós não guardamos:</h1></center>
+			<center><li>Itens de higiene pessoal</li>
+			<li>Recipientes sujos</li>
+			<li>Objetos cortantes ou nocivos</li>
+			<li> Roupas Íntimas </li>
+			<br>
+				<a class="btn btn-primary" href="/objetos" role="button">Entrar no sistema</a>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

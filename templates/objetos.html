@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Catálogo de objetos</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<h1>Todos os objetos</h1>
+
+  <!-Parte da página onde o usuário irá cadastrar um novo objeto->
+    <hr>
+    <h2>Adicionar um novo objeto:</h2>
+    <form action='/objetos' method='POST'>
+        Nome: <input type='text' name='Nome' id='Nome'>
+        <br>
+        <br>
+        Categoria: <input type='text' name='Categoria' id='Categoria'>
+        <br>
+        <br>
+        Descrição: <input type='text' name='Descrição' id='Descrição'>
+        <br>
+        <br>
+        Local: <input type='text' name='Local' id='Local'>
+        <br>
+        <br>
+        <input type='submit' value='Publicar'>
+    </form>
+    <hr>
+
+<!-Listagem dos objetos juntamente com as imagens, ícones e estilização->
+    {% for objeto in objetos %}
+      <div style="background-image: url('../static/img/caixa.png');">
+      <h1>{{ objeto.Nome }}</h1>
+      <h3>Categoria:</h3>
+      <p>{{ objeto.Categoria }}</p>
+      <h3>Descrição:</h3>
+      <p>{{ objeto.Descrição }}</p>
+      <h3>Local:</h3>
+      <p>{{ objeto.Local }}</p>
+
+      <a href='/objetos/deletar/{{objeto.id}}'><img src="/static/img/botao_lixeira.png" width="30" height="30"></a>
+      <a href='/objetos/editar/{{objeto.id}}'><img src="/static/img/botao_editar.png" width="30" height="30"></a>
+      <hr>
+      </div>
+    {% endfor %}
+
+{% endblock %}
